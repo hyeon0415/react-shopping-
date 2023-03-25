@@ -65,6 +65,7 @@ function App() {
           <p>2월 17일 발행</p>
           <button onClick={()=>{
             let copy = [...글제목];
+            // i번째 array데이터 삭제
             copy.splice(i, 1);
             글제목변경(copy);
           }}>삭제</button>
@@ -79,6 +80,7 @@ function App() {
       }}/>
       <button onClick={(e)=>{
         let copy = [...글제목];
+        // array에 추가하는 함수
         copy.unshift(입력값);
         글제목변경(copy)
       }}>글발행</button>
