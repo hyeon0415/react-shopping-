@@ -1,7 +1,7 @@
 /* eslint-disable */
 import logo from './logo.svg';
 import './App.css';
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 function App() {
 
@@ -87,6 +87,7 @@ function App() {
       {
         modal == true ? <Modal title={title} 작명={글제목} 글제목변경_={글제목변경}/> : null
       }
+      <Modal2></Modal2>
     </div>
   );
 }
@@ -107,5 +108,23 @@ function Modal(props){
   )
 }
 
+class Modal2 extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      name : 'kim',
+      age : 20
+    }
+  }
+  render(){
+    return(
+      <div>안녕{this.state.age}
+        <button onClick={()=>{
+          this.setState({age:21})
+        }}>버튼</button>
+      </div>
+    )
+  }
+}
 
 export default App;
